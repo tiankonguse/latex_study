@@ -1,0 +1,18 @@
+# ignore objects and archives, anywhere in the tree.
+*.[oa]
+# ignore generated html files,
+#*.html
+# except foo.html which is maintained by hand
+#!foo.html
+*.exe
+*.EXE
+*.o
+*.pdf
+*.log
+*.dvi
+*.gz
+*.png
+*.scp
+*.out
+*.aux
+

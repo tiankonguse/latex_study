@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+
+\usepackage{CJK}
+\usepackage[margin=0in]{geometry}
+%format of the algorithm 
+\usepackage{algorithm}               
+
+%format of the algorithm 
+\usepackage{algorithmic}             
+
+%multirow for format of table 
+\usepackage{multirow}                
+\usepackage{amsmath} 
+\usepackage{xcolor} 
+\usepackage{graphics} 
+\usepackage{graphicx} 
+\usepackage{epsfig} 
+
+
+\begin{document}
+\begin{CJK}{UTF8}{gbsn}
+
+%算法的开始
+\begin{algorithm}[htb]
+%算法的标题 
+\caption{ Framework of ensemble learning for our system.}             
+
+%给算法一个标签，这样方便在文中对算法的引用 
+\label{alg:Framwork}                  
+
+%不知[1]是干嘛的？ 
+\begin{algorithmic}[1]                
+
+%算法的输入参数：Input 
+\REQUIRE 描述\\                          
+    The set of positive samples for current batch, $P_n$;\\
+    The set of unlabelled samples for current batch, $U_n$;\\ 
+    Ensemble of classifiers on former batches, $E_{n-1}$; 
+
+\ENSURE 代码\\                           %算法的输出：Output 
+
+    Ensemble of classifiers on the current batch,  $E_n$; 
+
+\STATE Extracting the set of reliable negative and/or positive samples $T_n$ from $U_n$  with help of $P_n$; \label{code:fram:extract}      %算法的一个陈述，对应算法的一个步骤或公式之类的； \label{ code:fram:extract }对此行的标记，方便在文中引用算法的某个步骤 
+
+\STATE Training ensemble of classifiers $E$ on $T_n \cup P_n$, with help of data in former batches; \label{code:fram:trainbase} 
+
+\STATE $E_n=E_{n-1}\cup E$; \label{code:fram:add} 
+
+\STATE Classifying samples in $U_n-T_n$ by $E_n$; \label{code:fram:classify} 
+
+\STATE Deleting some weak classifiers in $E_n$ so as to keep the capacity of $E_n$; \label{code:fram:select} 
+
+\RETURN $E_n$;                %算法的返回值 
+
+\end{algorithmic} 
+
+\end{algorithm} 
+
+
+
+\begin{algorithm}[h] 
+
+    \caption{An example for format For \& While Loop in Algorithm} 
+
+    \begin{algorithmic}[1] 
+    		\STATE for(int i=0;i<10;i++);
+        \FOR{each $i\in [1,9]$} 
+            \STATE initialize a tree $T_{i}$ with only a leaf (the root);\\ 
+            \STATE $T=T\bigcup T_{i};$\\ 
+        \ENDFOR 
+        \FORALL {$c$ such that $c\in RecentMBatch(E_{n-1})$} \label{code:TrainBase:getc} 
+            \STATE  $T=T \cup PosSample(c)$; \label{code:TrainBase:pos} 
+        \ENDFOR; 
+
+        \FOR{$i=1$; $i<n$; $i++$ } 
+            \STATE $//$ Your source here; 
+        \ENDFOR 
+
+         
+
+        \FOR{$i=1$ to $n$} 
+
+            \STATE $//$ Your source here; 
+
+        \ENDFOR 
+
+         
+
+        \STATE  $//$ Reusing recent base classifiers. \label{code:recentStart} 
+
+        \WHILE {$(|E_n| \leq L_1 )and( D \neq \phi)$} 
+
+            \STATE  Selecting the most recent classifier $c_i$ from $D$; 
+
+            \STATE  $D=D-c_i$; 
+
+            \STATE  $E_n=E_n+c_i$; 
+
+        \ENDWHILE \label{code:recentEnd} 
+
+         
+
+    \end{algorithmic} 
+
+\end{algorithm} 
+
+\end{CJK}
+\end{document}
+
+
+
