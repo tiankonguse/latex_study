@@ -1,0 +1,4 @@
+\contentsline {chapter}{\numberline {1}\hyperlink {chap:1}{My chapter}}{3}{chapter.1}
+\hypertarget {chap:1}{}
+\contentsline {chapter}{\numberline {2}\hyperlink {chap:2}{My chapter}}{5}{chapter.2}
+\hypertarget {chap:2}{}

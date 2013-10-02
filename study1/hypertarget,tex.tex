@@ -1,0 +1,14 @@
+\documentclass{book}
+\usepackage{hyperref}
+
+\begin{document}    
+\tableofcontents
+
+\chapter{\protect\hyperlink{chap:\thechapter}{My chapter}}
+\addtocontents{toc}{\protect\hypertarget{chap:\thechapter}{}}
+
+\chapter{\protect\hyperlink{chap:\thechapter}{My chapter}}
+\addtocontents{toc}{\protect\hypertarget{chap:\thechapter}{}}
+
+foo     
+\end{document}

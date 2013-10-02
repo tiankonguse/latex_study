@@ -1,0 +1,104 @@
+\contentsline {section}{\numberline {1}Basic}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Header}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}KeyWords}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Macros and Templates}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Faster\_IO(G++ is better)}{3}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Notes}{3}{subsection.1.5}
+\contentsline {section}{\numberline {2}Maths}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}gcd}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}fgcd}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}sieve}{4}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}sieve the number of divisors (O(nlogn))}{4}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}sieve the number of divisors (O(n))}{4}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}sieve phi}{4}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}sieve 100000 primes $>$ 1e12}{4}{subsection.2.7}
+\contentsline {subsection}{\numberline {2.8}powMod}{4}{subsection.2.8}
+\contentsline {subsection}{\numberline {2.9}powMod\_plus}{4}{subsection.2.9}
+\contentsline {subsection}{\numberline {2.10}Miller-Rabin}{5}{subsection.2.10}
+\contentsline {subsection}{\numberline {2.11}Pollard-Rho}{5}{subsection.2.11}
+\contentsline {subsection}{\numberline {2.12}find\_factors}{5}{subsection.2.12}
+\contentsline {subsection}{\numberline {2.13}find\_factors\_plus}{5}{subsection.2.13}
+\contentsline {subsection}{\numberline {2.14}phi}{5}{subsection.2.14}
+\contentsline {subsection}{\numberline {2.15}phi\_plus}{5}{subsection.2.15}
+\contentsline {subsection}{\numberline {2.16}Dfun (the number of divisors (from 1 to n))}{5}{subsection.2.16}
+\contentsline {subsection}{\numberline {2.17}Dsum (the sum of all divisors (from 1 to n))}{5}{subsection.2.17}
+\contentsline {subsection}{\numberline {2.18}C(n,m) (dp)}{6}{subsection.2.18}
+\contentsline {subsection}{\numberline {2.19}C(n,m)\%mod (div)}{6}{subsection.2.19}
+\contentsline {subsection}{\numberline {2.20}C(n,m)\%mod (inv)}{6}{subsection.2.20}
+\contentsline {subsection}{\numberline {2.21}Nim\_mul}{6}{subsection.2.21}
+\contentsline {subsection}{\numberline {2.22}MLES}{6}{subsection.2.22}
+\contentsline {subsection}{\numberline {2.23}Place $n$ Balls into $m$ Boxes}{6}{subsection.2.23}
+\contentsline {subsubsection}{\numberline {2.23.1}Inits}{6}{subsubsection.2.23.1}
+\contentsline {subsubsection}{\numberline {2.23.2}$C\left ( {n,m} \right )$}{7}{subsubsection.2.23.2}
+\contentsline {subsubsection}{\numberline {2.23.3}$S\left ( {n,m} \right )$}{7}{subsubsection.2.23.3}
+\contentsline {subsubsection}{\numberline {2.23.4}$F\left ( {n,m} \right )$}{7}{subsubsection.2.23.4}
+\contentsline {subsubsection}{\numberline {2.23.5}Functions}{7}{subsubsection.2.23.5}
+\contentsline {subsection}{\numberline {2.24}$A^x \% C = = B$ (by ac)}{7}{subsection.2.24}
+\contentsline {subsection}{\numberline {2.25}HarmonicNumber (by rejudge)}{8}{subsection.2.25}
+\contentsline {subsection}{\numberline {2.26}Gauss int (Enumrate the arguments)}{8}{subsection.2.26}
+\contentsline {subsection}{\numberline {2.27}Gauss (mod)}{9}{subsection.2.27}
+\contentsline {subsection}{\numberline {2.28}Gauss (double)}{9}{subsection.2.28}
+\contentsline {subsection}{\numberline {2.29}Gauss (Linear Base)}{9}{subsection.2.29}
+\contentsline {section}{\numberline {3}Graph}{10}{section.3}
+\contentsline {subsection}{\numberline {3.1}Basic}{10}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Floyd}{10}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}SPFA}{10}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Dijkstra}{10}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Prim}{10}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Sap}{10}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Hungary\_Matrix}{11}{subsection.3.7}
+\contentsline {subsection}{\numberline {3.8}Cut-Vertex}{11}{subsection.3.8}
+\contentsline {section}{\numberline {4}Data Structure and Others}{11}{section.4}
+\contentsline {subsection}{\numberline {4.1}LIS}{11}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}RMQ}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Reversed number}{12}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}max\_sum(plusplus)}{12}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Trie(52)}{12}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}BinaryIndexedTree}{12}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Union\_Set}{12}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Union\_Set(Vector)}{13}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}suffix\_array}{13}{subsection.4.9}
+\contentsline {subsection}{\numberline {4.10}sa\_methods}{13}{subsection.4.10}
+\contentsline {subsection}{\numberline {4.11}RMQ(pos)}{13}{subsection.4.11}
+\contentsline {subsection}{\numberline {4.12}lcp}{13}{subsection.4.12}
+\contentsline {subsection}{\numberline {4.13}KMP}{14}{subsection.4.13}
+\contentsline {subsection}{\numberline {4.14}extKMP}{14}{subsection.4.14}
+\contentsline {subsection}{\numberline {4.15}Manacher}{14}{subsection.4.15}
+\contentsline {subsection}{\numberline {4.16}Lower Representation}{14}{subsection.4.16}
+\contentsline {subsection}{\numberline {4.17}lisan}{14}{subsection.4.17}
+\contentsline {subsection}{\numberline {4.18}Aho-corasick (trie graph)}{15}{subsection.4.18}
+\contentsline {subsection}{\numberline {4.19}Matrixs}{15}{subsection.4.19}
+\contentsline {subsection}{\numberline {4.20}to sum\_Matrix}{15}{subsection.4.20}
+\contentsline {subsection}{\numberline {4.21}Recycling\_Matrix}{15}{subsection.4.21}
+\contentsline {subsection}{\numberline {4.22}$solve\left ( {k,n} \right ) = 1^k + 2^{^k } + ...n^k$}{16}{subsection.4.22}
+\contentsline {subsection}{\numberline {4.23}HashMap}{16}{subsection.4.23}
+\contentsline {subsection}{\numberline {4.24}SegTree (add, renew, max, min) }{16}{subsection.4.24}
+\contentsline {subsection}{\numberline {4.25}Split tree}{17}{subsection.4.25}
+\contentsline {subsection}{\numberline {4.26}Splay}{18}{subsection.4.26}
+\contentsline {subsection}{\numberline {4.27}Rectangles' Union Area}{19}{subsection.4.27}
+\contentsline {subsection}{\numberline {4.28}Binary\_searches}{20}{subsection.4.28}
+\contentsline {subsection}{\numberline {4.29}Trichotomy}{21}{subsection.4.29}
+\contentsline {section}{\numberline {5}JAVA}{21}{section.5}
+\contentsline {subsection}{\numberline {5.1}Date}{21}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}JAVA\_IO}{21}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Chinese\_Theory}{21}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Matrix}{21}{subsection.5.4}
+\contentsline {section}{\numberline {6}Geometry}{22}{section.6}
+\contentsline {subsection}{\numberline {6.1}Circle\_Intersection}{22}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}cal\_centre}{23}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Line\_Intersection}{23}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Area of a Tetrahedron}{23}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}crosspoint(g++ better)}{23}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}N Circles cover [1-K] times}{23}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}Graham(int)}{24}{subsection.6.7}
+\contentsline {subsection}{\numberline {6.8}Polar\_Sort(convex)}{24}{subsection.6.8}
+\contentsline {subsection}{\numberline {6.9}Ellipse's Circumference}{25}{subsection.6.9}
+\contentsline {subsection}{\numberline {6.10}Area of intersection between Convex \& Circle}{25}{subsection.6.10}
+\contentsline {section}{\numberline {7}Others}{26}{section.7}
+\contentsline {subsection}{\numberline {7.1}BigNum}{27}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}calculator}{29}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Largest Submatrix of All 1's}{29}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}xor from 1 to n}{30}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}(DP) Find kth number contains 666}{30}{subsection.7.5}
+\contentsline {subsection}{\numberline {7.6}DLX}{30}{subsection.7.6}
+\contentsline {subsection}{\numberline {7.7}vimrc}{31}{subsection.7.7}
