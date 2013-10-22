@@ -14,4 +14,10 @@
 *.cls
 *.bak
 *.nnl
+*.aux
+*.dvi
+*.log
+*.out
+*.ps
+*.toc
 
