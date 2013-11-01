@@ -3,14 +3,11 @@
 \usepackage{CJK} %设置中文包
 \usepackage{listings}  % 用于代码插入
 \usepackage{xcolor} % 用于配色
-\usepackage{slashbox}
-\usepackage{float}
 \usepackage[landscape,  margin=2cm, headsep=.3cm]{geometry}
 \usepackage{graphicx} %使用图形
 \usepackage{amsmath} %使用数学库
 
 
-\usepackage{array}
 \usepackage{multicol} %设置多栏
 \usepackage{lipsum}% dummy text
 \setlength{\columnseprule}{0.1pt} %设置栏之间的分隔线的宽度，0则不显示分隔线。
@@ -52,7 +49,7 @@
 \lhead{}
 \chead{\textit{NENU CS ACM 模板}}
 \rhead{\thepage}
-\lfoot{make by tiankonguse powered by $vici$}
+\lfoot{make by tiankonguse powered by $vici$ v0.5}
 \cfoot{}
 \rfoot{}
 \renewcommand{\headrulewidth}{0.2pt}
@@ -6354,6 +6351,31 @@ void solve(int N) {
     for(int i=0; i<N; i++)
         if(DFN[i]==-1)
             Tarjan(i);
+}
+\end{lstlisting}
+
+\subsection{树的中心}
+\begin{lstlisting}
+int treeSize; //` treeSize 树的大小`
+int best_size;//` 子树平均大小，初始值是树的大小`
+int center;//`最优根，初始值随意`
+
+inline int centerOfGravity(int const u,int const p) {
+    int max_sub = 0,size = 1,v,t;
+    for(int son=head[u]; son!=-1; son=nodes[son].next) {
+        v=nodes[son].v;
+        if(vi[v] || v==p)continue;
+        t = centerOfGravity(v,u);
+        size += t;
+        if(t > max_sub)max_sub = t;
+    }
+    max_sub = max(max_sub, treeSize - size);
+
+    if(max_sub < best_size) {
+        center = u;
+        best_size = max_sub;
+    }
+    return size;
 }
 \end{lstlisting}
 
