@@ -50,7 +50,7 @@
 \chead{\textit{NENU CS ACM 模板}}
 \rhead{\thepage}
 \lfoot{\thepage}
-\cfoot{make by tiankonguse powered by $vici$ v0.7}
+\cfoot{make by tiankonguse powered by nenu CS acmer v0.8}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.2pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -108,6 +108,8 @@
 	}
 }
 
+
+
 %插入文本
 \linespread{2}{
 	\centering{
@@ -115,7 +117,7 @@
 		
 %
 
-make by tiankonguse(http://tiankonguse.com/)\\powered by vici
+make by tiankonguse(http://tiankonguse.com/)\\powered by nenu CS acmer
 
 %
 
@@ -164,8 +166,6 @@ this is a blank page.
 
 
 \section{Base}
-\subsection{头文件}
-
 \subsection{头文件}
 \begin{lstlisting}
 #include <iostream>
@@ -246,49 +246,7 @@ typedef long long LL;
 
 \subsection{Faster\_IO(G++ is better)}
 \begin{lstlisting}
-inline int getint() {
-	int ret = 0;
-	char c;
-	while (!isdigit(c = getchar()));
-	do {
-		ret = (ret << 3) + (ret << 1) + c - '0';	
-	}while (isdigit(c = getchar()));
-	return ret;
-}
-
-inline int nextInt() {
-	char c = getchar();
-	while (c != '-' && (c < '0' || c > '9')) c = getchar();
-	int ret = 0, neg = 0; if (c == '-') neg = 1, c = getchar();
-	do ret = (ret << 3) + (ret << 1) + c - '0';
-		while (isdigit(c = getchar()));
-	return neg ? -ret : ret;
-}
-
-int A[20], k;
-inline void printInt(int x) {
-	if (x < 0) putchar('-'), x = -x;
-	else if (x == 0) { putchar('0'); return; }
-	k = 0; while (x) A[k++] = x % 10, x /= 10;
-	for (int i = k - 1; ~i; i--) putchar('0' + A[i]);
-	putchar('\n');
-}
-
-inline double nextDouble() {
-    char c; int i = 1;
-    double ret = 0;
-    do c = getchar();
-   		while (c != '-' && c != '.' && (c < '0' || c > '9'));
-    bool neg = false;
-    if (c == '-') neg = true, c = getchar();
-	do ret = ret * 10 + c - '0';
-   		while (isdigit(c = getchar()));
-    if(c != '.') return neg ? -ret : ret;
-    c = getchar();
-    do ret += (c - '0') / pow(10.0, i++);
-		while (isdigit(c = getchar()));
-    return neg ? -ret : ret;
-}
+//delete it.
 \end{lstlisting}
 
 
@@ -304,8 +262,6 @@ judge ``mp.find(x) != mp.end()" is better than ``ret += mp[x]" directly
 0x3FFFFFFFFFFFFFFFLL    =   4611686018427387903    (recommended)
 0x7FFFFFFFFFFFFFFFLL    =   9223372036854775807
 
-//Increase the Stack Size(Only C++)
-#pragma comment(linker, "/STACK:36777216")
 //memset
 memset(dpMin, 0x3f, sizeof(dpMin)); //  inf
 memset(dpMax, 0xc0, sizeof(dpMax)); // -inf
@@ -347,6 +303,14 @@ sqrt(INT_MAX)=46340
 `如果求区间的素数，就对区间进行筛法`
 \end{lstlisting}
 
+
+
+\subsubsection{素数定理}
+\begin{lstlisting}[language={c++}]
+`对正实数x，定义π(x)为素数计数函数，亦即不大于x的素数个数。`
+`简单表达式：$\pi(x)\approx\frac{x}{\ln\,x}$,其中ln x为x的自然对数。`
+`精确表达式：$\pi(x)={\rm Li} (x) + O \left(x e^{-\frac{1}{15}\sqrt{\ln\,x}}\right)$,其中 ${\rm Li} (x) = \int_2^x \frac{dt}{\ln\,t}$`
+\end{lstlisting}
 
 \subsubsection{素数表基本晒法}
 \begin{lstlisting}[language={c++}]
@@ -674,27 +638,53 @@ void findfac(LL n){
 }
 \end{lstlisting}
 
-
 \subsection{梅森素数}
 \begin{lstlisting}[language={c++}]
 `m是一个素数，$M=2^m-1$也是一个素数，则M是梅森素数。`
 `使用大素数测试得到森素数。`
 \end{lstlisting}
 
-
-
-\subsection{费马小定理}
+\subsubsection{Lucas-Lehmer判定法}
 \begin{lstlisting}[language={c++}]
-`如果p是素数，则$a^{p − 1}$ ≡ $1(mod p)$对所有整数a都成立`
+bool Lucse(int N){
+    int r[64];r[1]=4;
+    int mod=1; mod=mod<<N; mod-=1;
+    for(int i=2;i<=N-1;i++){
+         temp=mul(r[i-1],r[i-1],mod);
+         r[i]=(temp-2)%mod;
+    }
+    if( N==2||r[N-1]==0 ) return 1;
+    else return 0;
+}
+\end{lstlisting}
+
+\subsection{同余}
+\begin{lstlisting}[language={c++}]
+`两个整数a，b，若它们除以正整数m所得的余数相等，则称a，b对于模m同余`
+`记作$a \equiv b \pmod{m}$`
+\end{lstlisting}
+
+
+\subsection{费马大定理}
+\begin{lstlisting}[language={c++}]
+`当整数n>2时，关于x, y, z的不定方程 $x^n + y^n =z^n$.的整数解都是平凡解`
+`当n是偶数时：$(0,\pm m,\pm m)$或$(\pm m,0,\pm m)$`
+`当n是奇数时：$(0,m,m), (m,0,m)$或$(m,-m,0)$`
 \end{lstlisting}
 
 
 
+\subsection{费马小定理}
+\begin{lstlisting}[language={c++}]
+`如果p是素数，则$a^{p-1} \equiv  1 \pmod{p}$对所有整数a都成立`
+\end{lstlisting}
+
+
 \subsection{欧拉函数}
 
-\subsubsection{欧拉原理}
+\subsubsection{欧拉定理}
 \begin{lstlisting}[language={c++}]
-`$a^{phi(n)}$ ≡  1 (mod n) gcd(a, n) = 1`
+`$a^{\varphi(n)} \equiv 1 \pmod n, \gcd(a,n)=1$`
 \end{lstlisting}
 
 \subsubsection{一些结论}
@@ -703,6 +693,39 @@ void findfac(LL n){
 `若 (N/a)\%a == 0 则有 E(N) = E(N/a)*a.`
 `若 (N/a)\%a !=0则有 E(N) = E(N/a)*(a-1)`
 `一个数的所有质因子之和 F（n）*n/2.`
+\end{lstlisting}
+
+
+\subsubsection{原根}
+\begin{lstlisting}[language={c++}]
+`在gcd(a,m)=1时，定义a对模m的指数$Ord_m(a)$为使$a^d \equiv 1 \pmod{m}$成立的最小的正整数d。`
+`由前知$Ord_m(a) $一定小于等于$  \phi (m)$，若$Ord_m (a) = \phi (m)$，则称a是模m的原根。`
+//`设m是正整数,a是整数,若a模m的阶等于φ(m),则称a为模m的一个原根`
+bool check(ll res,ll p){
+    for(int i=0;i<divi.size();i++)
+        if(mypow(res,(p-1)/divi[i],p)==1) return 0;
+    return 1;
+}
+ll Primitive_Root(ll p){
+    ll res=1;
+    divi.clear();
+    ll tmp=p-1;
+    for(ll i=2;i*i<=tmp;i++){
+        if(tmp%i==0){
+            divi.push_back(i);
+            while(tmp%i==0) tmp/=i;
+        }
+    }
+    if(tmp!=1) divi.push_back(tmp);
+    while(!check(res,p)) res++;
+    return res;
+}
+\end{lstlisting}
+
+
+\subsubsection{与n互素的数的和}
+\begin{lstlisting}[language={c++}]
+`$\sum_{1\le k\le n \atop (k,n)=1}\!\!k = \frac{1}{2}n\varphi(n)\text{ for }n>1$`
 \end{lstlisting}
 
 
@@ -896,12 +919,33 @@ rand();
 \subsection{GCD}
 
 
-\subsubsection{普通求公约数}
+\subsubsection{GCD(无递归)}
 \begin{lstlisting}[language={c++}]
 LL gcd(LL x,LL y){
 	if(!x || !y)return x?x:y;
 	for(LL t;t=x%y;x=y,y=t);
 	return y;
+}
+\end{lstlisting}
+
+
+
+\subsubsection{GCD(递归)}
+\begin{lstlisting}[language={c++}]
+int gcd(int a, int b) {
+	if(b == 0) return a;
+	else return gcd(b, a % b);
+}
+\end{lstlisting}
+
+\subsubsection{快速GCD}
+\begin{lstlisting}[language={c++}]
+int kgcd(int a,int b){
+	if(!a || !b)return a?a:b;
+	if(!(a&1) && !(b&1))return kgcd(a>>1,b>>1)<<1;
+	if(!(b&1))return kgcd(a,b>>1);
+	if(!(a&1))return kgcd(a>>1,b);
+	return kgcd(b,a%b);
 }
 \end{lstlisting}
 
@@ -917,42 +961,13 @@ double fgcd(double a, double b) {
 }
 \end{lstlisting}
 
-\subsubsection{初级GCD}
-\begin{lstlisting}[language={c++}]
-int gcd(int a, int b) {
-	if(b == 0) return a;
-	else return gcd(b, a % b);
-}
-\end{lstlisting}
-
-\subsubsection{快速求公约数}
-\begin{lstlisting}[language={c++}]
-int kgcd(int a,int b){
-	if(!a || !b)return a?a:b;
-	if(!(a&1) && !(b&1))return kgcd(a>>1,b>>1)<<1;
-	if(!(b&1))return kgcd(a,b>>1);
-	if(!(a&1))return kgcd(a>>1,b);
-	return kgcd(b,a%b);
-}
-\end{lstlisting}
-
-\subsubsection{浮点型fgcd}
-\begin{lstlisting}[language={c++}]
-double fgcd(double a,double b){
-    if(b >= -eps && b < eps)return a;
-    return fgcd(b,fmod(a,b));
-}
-\end{lstlisting}
 
 \subsubsection{GCD结论}
 \begin{lstlisting}[language={c++}]
 `有俩个数p,q,且gcd(q,p)=1,则最大无法表示成px+qy（x>=0,y>=0)的数是pq-q-p.`
 \end{lstlisting}
 
-
-
-
-\subsection{区间内与n的gcd不小于m的个数 }
+\subsubsection{区间内与n的gcd不小于m的个数 }
 \begin{lstlisting}[language={c++}]
 `输入m, n,求1~n之间中gcd(x, n) >=m 的x个数。`
 ``
@@ -960,6 +975,14 @@ double fgcd(double a,double b){
 `下面只需找出小于k且与k互质的数。`
 `因为：设y与k互质且小于k，那么gcd（y*xi，k*xi）=xi；（xi为N的因子，且xi大于等于M）。`
 \end{lstlisting}
+
+\subsubsection{LCM}
+\begin{lstlisting}[language={c++}]
+LL lcm(LL a,LL b){
+    return b/gcd(a,b)*a;
+}
+\end{lstlisting}
+
 
 \subsection{扩展GCD}
 \begin{lstlisting}[language={c++}]
@@ -1007,7 +1030,7 @@ int extgcd(int a,int b,int &x,int &y){
 =[(p*(a*x)/b)%p + a/b] %p
 =(a/b)%p
 //(p*(a*x)/b)%p=0;
-int div_mod(int a,int b,int c){
+LL div_mod(LL a,LL b,LL c){
 	int x,y;
 	exgcd(b,c,x,y);
 	return ((a%c)*(x%c))%c; 
@@ -1021,8 +1044,8 @@ int div_mod(int a,int b,int c){
 \begin{lstlisting}[language={c++}]
 `对于 a*x=b(\%n)，则存在整数y,使a*x - n*y = b.`
 `如果有解，则有d个解，设最小正数解为x0,则解为x0+d*i,i=0,1,2,…d-1. 返回最小正数解 无解时返回-1`
-__int64 modeq(__int64 a,__int64 b,__int64 n){
-	__int64 d,x,y;
+LL modeq(LL a,LL b,LL n){
+	LL d,x,y;
 	d=extgcd(a,n,x,y);
 	if(b%d)return -1;
 	return (b/d*x%n + n)%(n/d);
@@ -1078,6 +1101,7 @@ void sieve_factor() {
 
 \subsubsection{一个数的因子的个数}
 \begin{lstlisting}[language={c++}]
+//`因子个数:d(n)=(a1+1)*(a2+1)...(an+1)`
 int DFun(int n){
     int res=1;
     for(int i = 2,t; i * i <= n; i += 2){
@@ -1099,6 +1123,7 @@ int DFun(int n){
 
 \subsubsection{一个数的所有因子之和}
 \begin{lstlisting}[language={c++}]
+//`因子和  :f(n)=[(p1\^{}(a1+1)-1)/(p1-1)]*[(p2\^{}(a2+1)-1)/(p2-1)]...`
 int DsFun(int n){
     int res=1;
     for(int i = 2,t; i * i <= n; i += 2){
@@ -1113,6 +1138,7 @@ int DsFun(int n){
     if(n>1){
         res *= (n+1);
     }
+    
     return res;
 }
 \end{lstlisting}
@@ -1611,9 +1637,18 @@ __int64 search_bit(__int64 n,__int64 m){
 \end{lstlisting}
 
 
-\subsubsection{阶乘素数分解}
+\subsubsection{阶乘素数因子个数}
 \begin{lstlisting}
-//`N!的素数银子因子分解中的素数p的幂为[n/p]+[n/$p^2$]+[n/$p^3$]+…`
+//`N!的素数因子分解中的素数p的幂为[n/p]+[n/$p^2$]+[n/$p^3$]+…`
+int cnt(int n,int y){
+    int cn=0;
+    int tmp=y;
+    while(n>=tmp){
+        cn+=n/tmp;
+        tmp*=y;
+    }
+    return cn;
+}
 \end{lstlisting}
 
 \subsection{乘方$a^k$}
@@ -1894,7 +1929,7 @@ int rands() {
 }
 \end{lstlisting}
 
-\subsubsection{积性函数}
+\subsection{积性函数}
 \begin{lstlisting}
 `对于正整数n的一个函数f(n),当中f(1)=1且当a,b互质时，f(a,b)=f(a) * f(b);`
 `若某函数f(n)富符合f(1)=1,且就算a,b不互质,f(a,b)=f(a) * f(b),则称它为完全积性函数。`
@@ -1906,7 +1941,7 @@ int rands() {
 `d(n):n的正因子数目，n的所有正因子之和`
 \end{lstlisting}
 
-\subsubsection{三分算法}
+\subsection{三分算法}
 \begin{lstlisting}
 typedef double Type;
 double const eps = 1e-6;
