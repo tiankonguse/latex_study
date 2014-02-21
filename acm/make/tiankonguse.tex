@@ -6,16 +6,33 @@
 \usepackage[landscape,  margin=2cm, headsep=.3cm]{geometry}
 \usepackage{graphicx} %使用图形
 \usepackage{amsmath} %使用数学库
-
-
+\usepackage{amssymb}
+\usepackage{cmap}
+\usepackage{slashbox}
+\usepackage{float}
 \usepackage{multicol} %设置多栏
-\usepackage{lipsum}% dummy text
-\setlength{\columnseprule}{0.1pt} %设置栏之间的分隔线的宽度，0则不显示分隔线。
-\setlength{\columnsep}{0.7cm} %设置栏之间的间隔。
+\setlength{\columnseprule}{0.02cm} %设置栏之间的分隔线的宽度，0则不显示分隔线。
+\setlength{\columnsep}{0.5cm} %设置栏之间的间隔。
 
-\usepackage[linktocpage=false, colorlinks, linkcolor=black, anchorcolor=black, citecolor=black]{hyperref}
-\hypersetup{CJKbookmarks=true}
+\usepackage{indentfirst}
 
+\usepackage[dvips]{hyperref}
+\hypersetup{%
+	unicode=true,
+	CJKbookmarks=true, 
+	bookmarksnumbered=true,
+	bookmarksopen=true, 
+	bookmarksopenlevel=1, 
+	breaklinks=true,
+	colorlinks=false, 
+	plainpages=false, 
+	pdfpagelabels, 
+	pdfborder=0 0 0,
+	linktocpage=false,  
+	linkcolor=black, 
+	anchorcolor=black, 
+	citecolor=black
+}
 
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -27,6 +44,7 @@
 %左对齐 \begin{flushleft}...\end{flushleft}搜索
 %居中 \begin{center}...\end{center}
 %右对齐 \begin{flushright}...\end{flushright}
+%linespread 设置行距
 
 %打印公式符号
 % 打印 % => \%
@@ -47,16 +65,17 @@
 
 %页眉和页脚的左部，中部，右部
 \lhead{\thepage}
-\chead{\textit{NENU CS ACM 模板}}
+\chead{\textit{NENU CS ACM CODE}}
 \rhead{\thepage}
 \lfoot{\thepage}
-\cfoot{make by tiankonguse powered by nenu CS acmer v0.8}
+\cfoot{make by \href{http://tiankonguse.com/}{tiankonguse} \& powered      by nenu CS acmer}
 \rfoot{\thepage}
-\renewcommand{\headrulewidth}{0.2pt}
-\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0.05cm}
+\renewcommand{\footrulewidth}{0cm}
 
 %定义一个名为 darkgreen 的颜色
 \xdefinecolor{darkgreen}{rgb}{0,0.35,0}
+
 %设置插入的代码的样式
 \lstset{
     tabsize=4,%tab键用四个空格替换
@@ -73,72 +92,43 @@
     rulesepcolor=\color{red!20!green!20!blue!20},
     basicstyle=\footnotesize\ttfamily, %for paste
     columns=flexible,
+%	showspaces=false,
+%	showtabs=false,
+%	numbers=left, 
+%	numberstyle=\tiny,
+%	frame=shadowbox, 
+%	rulesepcolor=\color{red!20!green!20!blue!20},
     xrightmargin=0.5em %右边距
 }
 
+\title{ACM CODE}
+\author{\href{http://tiankonguse.com/}{tiankonguse}}
+\date{\today}
 
 \begin{document}
-
 %使用CJK中文 ，仿宋格式
 \begin{CJK*}{UTF8}{gbsn}
 
 %首页是封面，所以应该显示一栏
 \begin{onecolumn}
 
+\maketitle
+
 %插入图片
-\begin{figure}
-	\centering{
-		\includegraphics[width=10cm]{front.eps}
-	}\\
-\end{figure}
-
-%插入文本
-%linespread 设置行距
-\linespread{4}{
-	\centering{
-		\fontsize{30pt}{\baselineskip}\selectfont {
-		
-		%
-		
-			ACM 模板 
-			
-		%
-		
-		}
-	}
-}
-
-
-
-%插入文本
-\linespread{2}{
-	\centering{
-		\fontsize{10pt}{\baselineskip}\selectfont {
-		
-%
-
-make by tiankonguse(http://tiankonguse.com/)\\powered by nenu CS acmer
-
-%
-
-		}
-	}
-}
+\centering{\includegraphics[width=10cm]{front.eps}}
 
 \end{onecolumn}
 
 %新的一页
 \clearpage
 
-this is a blank page.
+\center{this is a blank page.}
 
 %新的一页
 \clearpage
 
 %设置多栏
 \begin{multicols}{3}
-
-%\begin{tabular}{p{0.9\columnwidth}}
 
 %设置目录的名字
 \renewcommand{\contentsname}{目录}
@@ -147,8 +137,6 @@ this is a blank page.
 \tableofcontents
 
 \clearpage 
-
-
 
 %全部左对齐
 \begin{flushleft} 
@@ -163,597 +151,157 @@ this is a blank page.
 % 插入代码
 %  //`代码注释全部用这个引起来，防止因为中文引起顺序错乱`
 %\end{lstlisting}
-
-
+%
+%lstinputlisting 可以程序导入文件
+%
 \section{Base}
 \subsection{头文件}
-\begin{lstlisting}
-#include <iostream>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <algorithm>
-#include <cmath>
-#include <string>
-#include <vector>
-#include <queue>
-#include <set>
-#include <map>
-#include <ctime>
-#include <map>
-#include <set>
-#include <deque>
-#include <stack>
-#include <functional>
-using namespace std;
-
-#ifdef __int64
-typedef __int64 LL;
-#else
-typedef long long LL;
-#endif
-
-const int inf = 0x3f3f3f3f;
-const LL Inf = 0x3FFFFFFFFFFFFFFFLL
-int main(){
-
-    return 0;
-}
-\end{lstlisting}
+%\cppcode{header.cpp}
+\lstinputlisting[language={C++}]{source/base/header.cpp}
 
 \subsection{文件结束符}
-\begin{lstlisting}
-`windows : ctrl-z`
-`linux : ctrl-d`
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/base/file_endsign.cpp}
 
 \subsection{codeblock配置终端}
-\begin{lstlisting}
-`setting `
-`	->environment`
-`	->gerneral setting:`
-`	->Termial to lunch console programs:`
-`	-> gnome-terminal -x`
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/base/codeblock_setting.cpp}
 
 \subsection{codeblock快捷键}
-\begin{lstlisting}
-`按住Ctrl滚滚轮，代码的字体大小。`
-`在编辑区按住右键可拖动代码，省去拉滚动条之麻烦；相关设置：Mouse Drag Scrolling。` 
-`Ctrl+D可复制当前行或选中块。`
-`Ctrl+Shift+C注释掉当前行或选中块`
-`Ctrl+Shift+X则解除注释。 `
-`Tab缩进当前行或选中块,Shift+Tab减少缩进。`
-`可拖动选中块使其移动到新位置，按住Ctrl则为复制到新位置。`
-`按下Atl，再拖动鼠标，可以实现部分选择。`
-`F2和Shift+F2分别可以显隐下方Logs \& others栏和左方的Management栏。`
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/base/codeblock_shortcuts.cpp}
 
 \subsection{通用long long}
-\begin{lstlisting}
-#ifdef __int64
-typedef __int64 LL;
-#else
-typedef long long LL;
-#endif
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/base/normal_long_long.cpp}
 
 \subsection{设置栈的大小}
-\begin{lstlisting}
-//Increase the Stack Size(Only C++)
-#pragma comment(linker, "/STACK:36777216")
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/base/set_stack_size.cpp}
 
 \subsection{Faster\_IO(G++ is better)}
-\begin{lstlisting}
-//delete it.
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/base/faster_io.cpp}
 
 
 \subsection{Notes}
-\begin{lstlisting}
-double pi = 3.14159265358...; // no 'f' appended
-#define maxn 200 + 20 // it's not safe
-int const mod = 1000000007; // use "const" to accelerate
-judge ``mp.find(x) != mp.end()" is better than ``ret += mp[x]" directly
+\lstinputlisting[language={C++}]{source/base/notes.cpp}
 
-0x3f3f3f3f   =   1061109567  (recommended)
-0x7f7f7f7f   =   2139062143
-0x3FFFFFFFFFFFFFFFLL    =   4611686018427387903    (recommended)
-0x7FFFFFFFFFFFFFFFLL    =   9223372036854775807
 
-//memset
-memset(dpMin, 0x3f, sizeof(dpMin)); //  inf
-memset(dpMax, 0xc0, sizeof(dpMax)); // -inf
-//for_bit
-for (int i = a ; i != 0 ; i = (i - 1) & a)
-//count bit
-static int countbit[1024];
-for (int i = 1; i < 1024; ++i) countbit[i] = 1 + countbit[i - ((i ^ (i - 1)) & i)];
-//sort by lexicographic
-int cmp(const void *a, const void *b) {
-	char *x = (char *)a;
-	char *y = (char *)b;
-	return strcmp(x, y);
-}
-qsort(str, n, sizeof(str[0]), cmp);
-\end{lstlisting}
 
+\clearpage 
 
 \section{数据结构}
 
 \subsection{数的范围}
-\begin{lstlisting}[language={c++}]
-int  2147483647; 10^9
-int   -2147483648;
-long long  9223372036854775807; 10^18
-long long   -9223372036854775808;
-sqrt(INT_MAX)=46340
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/number_range.cpp}
 
 \subsection{素数专题}
-\begin{lstlisting}[language={c++}]
-`素数定理：pi(x)/x*ln(x)=1,pi(x)表示小于x的素数的个数`
-`孪生素数猜想:存在无穷个p,p+2的素数对`
-`PS：陈景润证明的存在无穷个素数p，p+2至多有两个素数因子，及传说当中的"1+2"问题`
-`哥德巴赫猜想:每个大于2的偶数是两个素数的和`
-`n\^2{}+1猜想:存在无穷个n\^2{}+1这样形式的素数`
-`埃拉托斯尼斯筛法：正整数n是素数，当且仅当它不能被任何小于n的平方根的素数整除。`
-`有时候素数的范围很大，不能把所有的素数表打出来，就要只存部分素数。 `
-`如果求区间的素数，就对区间进行筛法`
-\end{lstlisting}
+素数定理：pi(x)/x*ln(x)=1,pi(x)表示小于x的素数的个数
+孪生素数猜想:存在无穷个p,p+2的素数对
+PS：陈景润证明的存在无穷个素数p，p+2至多有两个素数因子，及传说当中的"1+2"问题
+哥德巴赫猜想:每个大于2的偶数是两个素数的和
+$n^2+1$猜想:存在无穷个$n^2+1$这样形式的素数
+埃拉托斯尼斯筛法：正整数n是素数，当且仅当它不能被任何小于n的平方根的素数整除。
+有时候素数的范围很大，不能把所有的素数表打出来，就要只存部分素数。 
+如果求区间的素数，就对区间进行筛法
 
 
 
 \subsubsection{素数定理}
-\begin{lstlisting}[language={c++}]
-`对正实数x，定义π(x)为素数计数函数，亦即不大于x的素数个数。`
-`简单表达式：$\pi(x)\approx\frac{x}{\ln\,x}$,其中ln x为x的自然对数。`
-`精确表达式：$\pi(x)={\rm Li} (x) + O \left(x e^{-\frac{1}{15}\sqrt{\ln\,x}}\right)$,其中 ${\rm Li} (x) = \int_2^x \frac{dt}{\ln\,t}$`
-\end{lstlisting}
+对正实数x，定义π(x)为素数计数函数，亦即不大于x的素数个数。
+简单表达式：$\pi(x)\approx\frac{x}{\ln\,x}$,其中ln x为x的自然对数。
+精确表达式：$\pi(x)={\rm Li} (x) + O \left(x e^{-\frac{1}{15}\sqrt{\ln\,x}}\right)$,其中 ${\rm Li} (x) = \int_2^x \frac{dt}{\ln\,t}$
 
 \subsubsection{素数表基本晒法}
-\begin{lstlisting}[language={c++}]
-const int N=1000000;
-const int M=300000;
-bool is[N]; 
-int prm[M];
-int getprm(){
-	int e = (int)(sqrt(0.0 + N) + 1),k=0,i;
-	memset(is, 1, sizeof(is));
-	prm[k++] = 2; is[0] = is[1] = 0;
-	for (i = 4; i < N; i += 2) is[i] = 0;
-	for(i=3;i<e;i+=2){
-		if(is[i]){
-			prm[k++]=i;
-			for(int s=i+i,j=i*i;j<N;j+=s)is[j]=0;
-		}
-	}
-	for (; i < N; i += 2)
-		if (is[i])prm[k++] = i;
-	return k; 
-}
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/sieve_base_prime.cpp}
 
 \subsubsection{压位筛素数}
-\begin{lstlisting}[language={c++}]
-typedef long long LL;
-LL NN = 2147483647LL;
-const int N= (2147483647>>3)+1;
-const int M=14630853;
-char is[N];
-LL prm[M];
-void setIs(int pos){
-    is[pos>>3] &= ~(1<<(pos%8));
-}
-
-bool getIs(int pos){
-    return is[pos>>3] & (1<<(pos%8));
-}
-
-int getprm(){
-	int e = (int)(sqrt(0.0 + NN) + 1),k=0,i;
-	memset(is, 0XFF, sizeof(is));
-
-	prm[k++] = 2;
-	setIs(0);
-	setIs(1);
-	for (i = 4; i < NN; i += 2){
-        setIs(i);
-	}
-
-	for(i=3;i<e;i+=2){
-		if(getIs(i)){
-			prm[k++]=i;
-			for(int s=i+i,j=i*i;j<NN;j+=s){
-                setIs(j);
-			}
-		}
-	}
-	for (; i < NN; i += 2)
-		if (getIs(i))prm[k++] = i;
-	return k;
-}
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/sieve_bit_prime.cpp}
 
 \subsubsection{sieve}
-\begin{lstlisting}
-//cnt[1e7] = 664579, cnt[1e6] = 78498
-//mark[i] : the minimum factor of i (when i is a prime, mark[i] == i)
-int const maxn = 1e7;
-int pri[maxn], mark[maxn], cnt;
-void sieve() {
-	cnt = 0, mark[0] = mark[1] = 1;
-	for (int i = 2; i < maxn; i++) {
-		if (!mark[i]) pri[cnt++] = mark[i] = i;
-		for (int j = 0; pri[j] * i < maxn; j++) {
-			mark[ i * pri[j] ] = pri[j];
-			if (i % pri[j] == 0) break;
-		}
-	}
-}
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/sieve_mark_prime.cpp}
 
 \subsubsection{小舟学长的筛法}
-\begin{lstlisting}[language={c++}]
-const int N=1000000;
-const int M=300000;
-int mark[N];//`最小因子`
-int prm[M];
-int cnt;
-
-int getprm(){
-	int j,i;
-	memset(mark, 0, sizeof(mark));
-
-    cnt = 0;
-    mark[0] = mark[1] = 1;
-
-    for(i = 2; i < N; ++i){
-        if(!mark[i]){
-            prm[cnt++] = mark[i] = i;
-        }
-        for(j=0;prm[j]*i<N;++j){
-            mark[i*prm[j]] = prm[j];
-            if(i%prm[j] == 0)break;
-        }
-    }
-    return cnt;
-}
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/sieve_vici_prime.cpp}
 
 \subsubsection{区间素数}
-\begin{lstlisting}[language={c++}]
-bool _is[N];
-int _prm[N], _num;
-void rangePrime(LL L, LL U) {
-    LL i,k,size=U-L,tmp;
-    _num = 0;
-    memset(_is,1,sizeof(_is));
-
-    for(i=0; i <= num && prm[i]*prm[i]<=U; ++i) {
-        k = (L + prm[i] - 1)/prm[i];
-        while(k <= 1) {
-            k++;
-        }
-        tmp = k*prm[i];
-        while(tmp <= U) {
-            _is[tmp - L] = 0;
-            tmp += prm[i];
-        }
-    }
-
-    for(i = 0; i <= size; ++i) {
-        if(_is[i]) {
-            _prm[_num++]=i+L;
-        }
-    }
-}
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/sieve_range_prime.cpp}
 
 \subsubsection{sieve 100000 primes $>$ 1e12}
-\begin{lstlisting}
-//or java.BigInteger -> nextProbablePrime();
-typedef long long ll;
-int const maxn = 4e6;
-ll const start = 1e12, end = start + 3e6;
-
-int pri[maxn], cnt; bool mark[maxn];
-ll pl[maxn]; int pnt; bool markl[maxn];
-
-void __sieve_large() {
-    cnt = 0, mark[0] = mark[1] = true;
-    for (int i = 2; i < maxn; ++i) {
-        if (!mark[i]) pri[cnt++] = i;
-        for (int j = 0; i * pri[j] < maxn; ++j) {
-            mark[i * pri[j]] = true;
-            if (!(i % pri[j])) break;
-        }
-    }
-    ll pos;
-    for (int i = 0; i < cnt; ++i) {
-        if (start % pri[i] == 0) pos = start;
-        else pos = start - start % pri[i] + pri[i];
-        for (; pos <= end; pos += pri[i]) {
-            markl[pos - start] = true;
-        }
-    }
-    pnt = 0;
-    for (int i = 0; i <= end - start; ++i) {
-        if (!markl[i]) pl[pnt++] = start + i;
-    }
-}
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/sieve_large_prime.cpp}
 
 \subsubsection{反素数}
+\lstinputlisting[language={C++}]{source/dataStructure/anti_prime.cpp}
 
-\begin{lstlisting}[language={c++}]
-`对于任何正整数x,其约数的个数记做g(x).`
-`例如g(1)=1,g(6)=4.`
-`如果某个正整数x满足:对于任意i(0$<$i$<$x),都有g(i)$<$g(x),则称x为反素数.`
-`反素数可以理解为对于x,在[1,x]中,x的约数最多,也就是当前约数最多的值.`
-
-int rprim[35][2] = {498960,200,332640,192,277200,180, 
-221760,168,166320,160,110880,144,83160,128,55440,120,
-50400,108,45360,100,27720,96,25200,90,20160,84,15120,
-80,10080,72,7560,64,5040,60,2520,48,1680,40,1260,36,
-840,32,720,30,360,24,240,20,180,18,120,16,60,12,48,
-10,36,9,24,8,12,6,6,4,4,3,2,2,1,1};
-
-typedef __int64 INT;
-INT bestNum;   //`约数最多的数`
-INT bestSum;   //`约数最多的数的约数个数`
-const int M=1000; //`反素数的个数 `
-INT n=500000;//`求n以内的所有的反素数`
-INT rprim[M][2];
-//`2*3*5*7*11*13*17>n，所以只需考虑到17即可`
-INT sushu[14]={2,3,5,7,11,13,17,19,23,29};  
-
-//`当前走到num这个数，接着用第k个素数，num的约数个数为sum，`
-//`第k个素数的个数上限为limit`
-void getNum(INT num,INT k,INT sum,INT limit)  {
- 	if(num>n)return;
-	if(sum>bestSum){
-		bestSum = sum,bestNum = num;;
-	}else if(sum == bestSum && num < bestNum){  
-		//`约数个数一样时，取小数`
-		bestNum = num;
-	}
-
-	//`只需考虑到素数17,即sushu[6]`
-	if(k>=7) return; 
-	
-	//`素数k取i个`
-	for(INT i=1,p=1;i<=limit;i++){   
-		p*=sushu[k];
-		getNum(num*p,k+1,sum*(i+1),i);
-	}
-}
-//`求大于等于log2（n）的最小整数`
-INT log2(INT n){  
-	INT i = 0,p = 1;
-	while(p<n){p*=2,i++;}
-	return i;
-}
-int getrprim(){
-	int i = 0;
-	while(n>0){
-		bestSum =bestNum = 1;
-		getNum(1,0,1,log2(n));
-		n = bestNum - 1;
-		rprim[i][0]=bestNum;
-		rprim[i][1]=bestSum;
-		i++;
-	}
-	return i;	
-}
-\end{lstlisting}
 
 
 \subsection{大素数}
-\begin{lstlisting}[language={c++}]
-`pow\_mod 见x\^{}n mod c非递归版`
-`muti\_mod 见(a*b) mod c`
-`cons int S=20; 越大正确率越大`
-`factor是一个向量，储存N的素数因子`
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/huge_prime.cpp}
 
 
-\subsubsection{素数测试的GCD}
-\begin{lstlisting}[language={c++}]
-LL gcd(LL a,LL b){
-    if (a==0 || b == 0) return 1;
-    a<0?a=-a:0;
-    b<0?b=-b:0;
-    while (b){
-        LL t=a%b; a=b; b=t;
-    }
-    return a;
-}
-\end{lstlisting}
 
 \subsubsection{检验n是不是合数}
-\begin{lstlisting}[language={c++}]
-//`以a为基，n-1=x*2\^{}t`
-bool check(LL a,LL n,LL x,LL t){   
-    LL ret=pow_mod(a,x,n),last=ret;
-    for (int i=1;i<=t;i++){
-        ret=muti_mod(ret,ret,n);
-        if (ret==1 && last!=1 && last!=n-1) return 1;
-        last=ret;
-    }
-    if (ret!=1) return 1;
-    return 0;
-}
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/huge_prime_check_composite.cpp}
 
 
 
 \subsubsection{大素数测试}
-\begin{lstlisting}[language={c++}]
-bool Miller_Rabin(LL n){
-    LL x=n-1,t=0;
-    while ((x&1)==0) x>>=1,t++;
-    bool flag=1;
-    if (t>=1 && (x&1)){
-        for (int k=0;k<S;k++){//s=20
-            LL a=rand()%(n-1)+1;
-            if (check(a,n,x,t)) {flag=1;break;}
-            flag=0;
-        }
-    }
-    if (!flag || n==2) return 0;
-return 1;   
-}
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/huge_prime_test.cpp}
 
 \subsubsection{pollard\_rho分解}
-\begin{lstlisting}[language={c++}]
-//` 得到一个因数.返回N时为一个没有找到 `
-LL Pollard_rho(LL x,LL c){
-    LL i=1,x0=rand()%x,y=x0,k=2;
-    while (1){
-        i++;
-        x0=(muti_mod(x0,x0,x)+c)%x;
-        LL d=gcd(y-x0,x);
-        if (d!=1 && d!=x)return d;
-        if (y==x0) return x;
-        if (i==k)y=x0,k+=k;
-    }
-}
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/pollard_rho.cpp}
 
 
 \subsubsection{质因数分解N }
-\begin{lstlisting}[language={c++}]
-void findfac(LL n){           
-    if (!Miller_Rabin(n)){
-        factor.push_back(n);//`factor为一个向量`
-        return;
-    }
-    LL p=n;
-    while (p>=n) p=Pollard_rho(p,rand() % (n-1) +1);
-    findfac(p);
-    findfac(n/p);
-}
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/huge_prime_find.cpp}
 
 \subsection{梅森素数}
-\begin{lstlisting}[language={c++}]
-`m是一个素数，$M=2^m-1$也是一个素数，则M是梅森素数。`
-`使用大素数测试得到森素数。`
-\end{lstlisting}
+m是一个素数，$M=2^m-1$也是一个素数，则M是梅森素数。
+使用大素数测试得到森素数。
 
 \subsubsection{Lucas-Lehmer判定法}
-\begin{lstlisting}[language={c++}]
-bool Lucse(int N){
-    int r[64];r[1]=4;
-    int mod=1; mod=mod<<N; mod-=1;
-    for(int i=2;i<=N-1;i++){
-         temp=mul(r[i-1],r[i-1],mod);
-         r[i]=(temp-2)%mod;
-    }
-    if( N==2||r[N-1]==0 ) return 1;
-    else return 0;
-}
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/lucas_lehmer.cpp}
 
 \subsection{同余}
-\begin{lstlisting}[language={c++}]
-`两个整数a，b，若它们除以正整数m所得的余数相等，则称a，b对于模m同余`
-`记作$a \equiv b \pmod{m}$`
-\end{lstlisting}
+两个整数a，b，若它们除以正整数m所得的余数相等，则称a，b对于模m同余
+记作$a \equiv b \pmod{m}$
 
 
 \subsection{费马大定理}
-\begin{lstlisting}[language={c++}]
-`当整数n>2时，关于x, y, z的不定方程 $x^n + y^n =z^n$.的整数解都是平凡解`
-`当n是偶数时：$(0,\pm m,\pm m)$或$(\pm m,0,\pm m)$`
-`当n是奇数时：$(0,m,m), (m,0,m)$或$(m,-m,0)$`
-\end{lstlisting}
+当整数n>2时，关于x, y, z的不定方程 $x^n + y^n =z^n$.的整数解都是平凡解
+当n是偶数时：$(0,\pm m,\pm m)$或$(\pm m,0,\pm m)$
+当n是奇数时：$(0,m,m), (m,0,m)$或$(m,-m,0)$
 
 
 
 \subsection{费马小定理}
-\begin{lstlisting}[language={c++}]
-`如果p是素数，则$a^{p-1} \equiv  1 \pmod{p}$对所有整数a都成立`
-\end{lstlisting}
+如果p是素数，则$a^{p-1} \equiv  1 \pmod{p}$对所有整数a都成立
 
 
 \subsection{欧拉函数}
 
 \subsubsection{欧拉定理}
-\begin{lstlisting}[language={c++}]
-`$a^{\varphi(n)} \equiv 1 \pmod n, \gcd(a,n)=1$`
-\end{lstlisting}
+$a^{\varphi(n)} \equiv 1 \pmod n, \gcd(a,n)=1$
 
 \subsubsection{一些结论}
-\begin{lstlisting}[language={c++}]
-`a为N的质因数`
-`若 (N/a)\%a == 0 则有 E(N) = E(N/a)*a.`
-`若 (N/a)\%a !=0则有 E(N) = E(N/a)*(a-1)`
-`一个数的所有质因子之和 F（n）*n/2.`
-\end{lstlisting}
+a为N的质因数
+若 (N/a)\%a == 0 则有 E(N) = E(N/a)*a.
+若 (N/a)\%a !=0则有 E(N) = E(N/a)*(a-1)
+一个数的所有质因子之和 F（n）*n/2.
 
 
 \subsubsection{原根}
-\begin{lstlisting}[language={c++}]
-`在gcd(a,m)=1时，定义a对模m的指数$Ord_m(a)$为使$a^d \equiv 1 \pmod{m}$成立的最小的正整数d。`
-`由前知$Ord_m(a) $一定小于等于$  \phi (m)$，若$Ord_m (a) = \phi (m)$，则称a是模m的原根。`
-//`设m是正整数,a是整数,若a模m的阶等于φ(m),则称a为模m的一个原根`
-bool check(ll res,ll p){
-    for(int i=0;i<divi.size();i++)
-        if(mypow(res,(p-1)/divi[i],p)==1) return 0;
-    return 1;
-}
-ll Primitive_Root(ll p){
-    ll res=1;
-    divi.clear();
-    ll tmp=p-1;
-    for(ll i=2;i*i<=tmp;i++){
-        if(tmp%i==0){
-            divi.push_back(i);
-            while(tmp%i==0) tmp/=i;
-        }
-    }
-    if(tmp!=1) divi.push_back(tmp);
-    while(!check(res,p)) res++;
-    return res;
-}
-\end{lstlisting}
+在gcd(a,m)=1时，定义a对模m的指数$Ord_m(a)$为使$a^d \equiv 1 \pmod{m}$成立的最小的正整数d。
+由前知$Ord_m(a) $一定小于等于$  \phi (m)$，若$Ord_m (a) = \phi (m)$，则称a是模m的原根。
+设m是正整数,a是整数,若a模m的阶等于φ(m),则称a为模m的一个原根
+
+\lstinputlisting[language={C++}]{source/dataStructure/primitive_root.cpp}
 
 
 \subsubsection{与n互素的数的和}
-\begin{lstlisting}[language={c++}]
-`$\sum_{1\le k\le n \atop (k,n)=1}\!\!k = \frac{1}{2}n\varphi(n)\text{ for }n>1$`
-\end{lstlisting}
+$\sum_{1\le k\le n \atop (k,n)=1}\!\!k = \frac{1}{2}n\varphi(n)\text{ for }n>1$
 
 
 \subsubsection{第n个与m互质的数}
-\begin{lstlisting}[language={c++}]
-`如果求与m互质的第n个数，可以先把小于m的互质的数错在ans中（筛法求）`
-`（从1开始存，最后一个存在0中），然后大于m的互质的数都是小于m的互质的数加上若干个m得到的。`
-int euler(int n,int m){
-    memset(map,true,sizeof(map));
-    int i=0,num=n;
-    for(;num!=1; i++;){
-        if(num%prim[i]==0){
-            while(num%prim[i]==0)num/=str[i];
-            for(int j=prim[i];j<=n;j+=prim[i]){
-                map[j]=false;
-            }
-        }
-    }
-    num=0;
-    for(i=1;i<n;i++){
-        if(map[i]){
-            ans[++num]=i;
-        }
-    }
-    ans[0]=ans[num];
-    return ans[m%num]+(m-1)/num * n;
-}
-\end{lstlisting}
+如果求与m互质的第n个数，可以先把小于m的互质的数错在ans中（筛法求）
+（从1开始存，最后一个存在0中），然后大于m的互质的数都是小于m的互质的数加上若干个m得到的。
+
+\lstinputlisting[language={C++}]{source/dataStructure/nth_prime.cpp}
 
 \subsection{sieve phi}
 \begin{lstlisting}
