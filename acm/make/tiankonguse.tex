@@ -307,21 +307,7 @@ $\sum_{1\le k\le n \atop (k,n)=1}\!\!k = \frac{1}{2}n\varphi(n)\text{ for }n>1$
 \lstinputlisting[language={C++}]{source/dataStructure/sieve_phi.cpp}
 
 \subsubsection{打表欧拉函数}
-\begin{lstlisting}[language={c++}]
-`这个表存的是小于N的数的欧拉函数`
-const int N=10000; 
-int phi[N+1]; 
-void ruler(){ 
-	int i,j; 
-	for (i = 1; i <= N; i++) phi[i] = i;
-	for (i = 2; i <= N; i += 2) phi[i] /= 2;
-	for (i = 3; i <= N; i += 2) 
-		if(phi[i] == i) {
-			for (j = i; j <= N; j += i)
-				phi[j] = phi[j] / i * (i - 1);
-		}
-} 
-\end{lstlisting}
+\lstinputlisting[language={C++}]{source/dataStructure/phi_tanle.cpp}
 
 
 \subsubsection{单独求欧拉函数(公式)}
