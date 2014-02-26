@@ -1,0 +1,2 @@
+srand(time(NULL));
+rand();

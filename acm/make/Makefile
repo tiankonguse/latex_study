@@ -18,7 +18,7 @@ PS2PDF=ps2pdf
 BIBTEX=bibtex
 
 LATEX_OPTS=-interaction=nonstopmode
-DVIPS_OPTS=
+DVIPS_OPTS=-q
 PS2PDF_OPTS=-dSubsetFonts=true -dEmbedAllFonts=true
 BIBTEX_OPTS=
 
