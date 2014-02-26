@@ -5,7 +5,7 @@
 最后的结果自然是 f[n].
  递推公式:
  f[1]=0;
- f[i]=(f[i-1]+m)\%i; (i>1)`
+ f[i]=(f[i-1]+m)\%i; (i$>$1)`
 */
 int fun(int n,int m) {
     int ans=0;

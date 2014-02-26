@@ -1,5 +1,3 @@
-\subsection{最大团}
-\begin{lstlisting}
 const int V = 1000;
 int g[V][V], dp[V], stk[V][V], mx;
 int dfs(int n, int ns, int dep) {
@@ -30,3 +28,5 @@ int clique(int n) {
         dp[i] = mx;
     }
     return mx;
+}
+ 

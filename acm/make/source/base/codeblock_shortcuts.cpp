@@ -7,5 +7,5 @@
 `6.Tab缩进当前行或选中块,Shift+Tab减少缩进。`
 `7.可拖动选中块使其移动到新位置，按住Ctrl则为复制到新位置。`
 `8.按下Atl，再拖动鼠标，可以实现部分选择。`
-`9.F2和Shift+F2分别可以显隐下方Logs & others栏和左方的Management栏。`
+`9.F2和Shift+F2分别可以显隐下方Logs \& others栏和左方的Management栏。`
 */

@@ -1,9 +1,3 @@
-`欧拉通路:图连通；除 2 个端点外其余节点入度=出度；1 个端点入度比出度大 1；一个端点入度比出度小 1`
-`欧拉回路:图连通；所有节点入度=出度`
-\end{lstlisting}
-
-\subsection{网络流}
-\begin{lstlisting}
 const int N = 100;
 const int E = 1000;
 #define typec int // type of cost
@@ -67,3 +61,9 @@ typec flow(int n, int s, int t) {
             } else {
                 if (0 == top) break;
                 dep[i] = -1;
+                i = bf[ps[--top]].x;
+            }
+        }
+    }
+    return res;
+}

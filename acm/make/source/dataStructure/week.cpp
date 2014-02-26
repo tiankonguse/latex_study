@@ -1,5 +1,3 @@
-\subsection{星期几}
-\begin{lstlisting}
 //`返回 1~7`
 int getday(int y,int m,int d) {
 //` 1 月 2 月当作前一年的 13,14 月`
@@ -13,3 +11,5 @@ int getday(int y,int m,int d) {
     if(y<1752)return ansa;
     if(y == 1752 && m < 9)return ansa;
     if(y == 1752 && m == 9 && d < 3)return ansa;
+    return ansb;
+}

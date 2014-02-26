@@ -1,5 +1,3 @@
-\subsection{IDA*}
-\begin{lstlisting}
 `这里以一个例子来讲解 IDA*.`
 `问题：n 个数互不相同，可以对相邻的连续区间进行交换，最终使 n 个数达到升序。求最少交换次数。`
 `这里假设是 1 到 n 的 n 个数。不是话可以进行映射。`
@@ -66,3 +64,4 @@ int main() {
     }
     printf("%d\n",_maxDepth);
     return 0;
+}

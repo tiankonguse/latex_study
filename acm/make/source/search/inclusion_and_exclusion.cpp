@@ -1,5 +1,3 @@
-\subsection{容斥原理}
-\begin{lstlisting}
 `容斥可以用 dfs 搜索实现`
 `用一个例子来看怎么实现容斥`
 `给定一个集合和一个数 n，求小于 n 的数中，满足可以被集合中的其中一个数整除的个数。`
@@ -17,3 +15,5 @@ void dfs(int i,int cnt,TT lcm) {
 }
 void rongchi() {
     for(int i=0; i<m; i++)
+        dfs(i,1,arr[i]);
+}

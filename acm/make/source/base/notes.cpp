@@ -1,7 +1,7 @@
 double pi = 3.14159265358...; // no 'f' appended
 #define maxn 200 + 20 // it's not safe
 int const mod = 1000000007; // use "const" to accelerate
-judge ``mp.find(x) != mp.end()" is better than ``ret += mp[x]" directly
+judge mp.find(x) != mp.end()" is better than ret += mp[x]" directly
 
 0x3f3f3f3f   =   1061109567  (recommended)
 0x7f7f7f7f   =   2139062143
