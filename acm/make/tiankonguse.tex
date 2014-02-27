@@ -1,15 +1,26 @@
 \documentclass[a4paper]{article}
+%\documentclass[a4paper,UTF8]{ctexart}
 
 \usepackage{CJKutf8} %设置中文包
+%\usepackage{xeCJK} %讓中英文字體分開設置
 %\usepackage{CJK} %设置中文包
-\usepackage[T1]{fontenc}
+%\setCJKmainfont{文泉驛等寬正黑} %設定中文為系統上的字型，而英文不去更動，使用原TeX字型
+%\XeTeXlinebreaklocale "zh"             %這兩行一定要加，中文才能自動換行
+%\XeTeXlinebreakskip = 0pt plus 1pt     %這兩行一定要加，中文才能自動換行
+\usepackage[T1]{fontenc} %加這個就可以設定字體 
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
 \usepackage{listings}  % 用于代码插入
 \usepackage{xcolor} % 用于配色
-\usepackage[landscape,  margin=2cm, headsep=.3cm]{geometry}
+\usepackage[landscape,  margin=0cm,headsep=0cm]{geometry}
 \usepackage{graphicx} %使用图形
 \usepackage{amsmath} %使用数学库
 \usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{fullpage}
+
 \usepackage{cmap}
+%\usepackage{ccmap}
 \usepackage{slashbox}
 \usepackage{float}
 \usepackage{multicol} %设置多栏
@@ -84,7 +95,7 @@
 \lfoot{\thepage}
 \cfoot{make by \href{http://tiankonguse.com/}{tiankonguse} \& powered      by nenu CS acmer and vici \& v0.6}
 \rfoot{\thepage}
-\renewcommand{\headrulewidth}{0.05cm}
+\renewcommand{\headrulewidth}{0.01cm}
 \renewcommand{\footrulewidth}{0cm}
 
 %定义一个名为 darkgreen 的颜色
@@ -1306,7 +1317,6 @@ public class Main {
 `历年来国家集训队论文`
 `wiki http://en.wikipedia.org/wiki/Main\_Page§`
 \end{lstlisting}
-
 
 \end{flushleft}
 \clearpage

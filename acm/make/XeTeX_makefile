@@ -11,8 +11,7 @@
 #
 ###############################################################################
 
-LATEX=latex
-#LATEX=xelatex
+LATEX=xelatex
 DVIPS=dvips
 PS2PDF=ps2pdf
 BIBTEX=bibtex
@@ -33,8 +32,6 @@ tiankonguse.ps: tiankonguse.dvi
 	$(DVIPS) $(DVIPS_OPTS) $^
 
 tiankonguse.dvi: tiankonguse.tex
-	$(LATEX) $(LATEX_OPTS) $^ 
-	$(LATEX) $(LATEX_OPTS) $^ 
 	$(LATEX) $(LATEX_OPTS) $^ 
 	
 #	@if(grep "There were undefined references" tiankonguse.log > /dev/null);\
