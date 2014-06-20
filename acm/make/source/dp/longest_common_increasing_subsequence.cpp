@@ -1,6 +1,6 @@
 int f[N][N], dp[N];
 // a[1…la], b[1…lb] O(n^2)
-int gcis(int a*, int la, int b*, int lb, int ans*) {
+int gcis(int *a, int la, int *b, int lb, int ans*) {
     int i, j, k, mx;
     memset(f, 0, sizeof(f));
     memset(dp, 0, sizeof(dp));

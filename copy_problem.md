@@ -15,7 +15,7 @@ http://forum.ubuntu.org.cn/viewtopic.php?f=35&t=402141
 
 
 
-
+http://bbs.ctex.org/forum.php?mod=viewthread&tid=5794f4
 
 
 
